@@ -20,7 +20,7 @@ class LinkedList:
             return
 
         temp = self.head
-        while (temp):
+        while (temp.next):
             if temp.next.data == key:
                 temp.next = temp.next.next
                 flag = 1
@@ -41,7 +41,7 @@ if __name__=='__main__':
     ll.push(2)
     ll.push(3)
     ll.push(4)
-    ll.delete(4)
+    ll.delete(5)
     ll.printLL()
 
             

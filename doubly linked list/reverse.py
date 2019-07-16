@@ -29,9 +29,6 @@ class DLL:
             curr = fut
 
         self.head = prev 
-            
-
-
 
     def printDLL(self):
         temp = self.head

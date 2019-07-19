@@ -28,7 +28,7 @@ if __name__=="__main__":
     st = Stacks()
     inf = input("Enter the infix expression:")
     #print("input: a+b*(c^d-e)^(f+g*h)-i")
-    inf = "a+b*(c^d-e)^(f+g*h)-i"
+    #inf = "a+b*(c^d-e)^(f+g*h)-i"
 
     for el in inf:
         # print("checking: ",el)

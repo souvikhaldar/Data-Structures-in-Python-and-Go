@@ -21,6 +21,8 @@ class Stacks:
 def infix_to_postfix(st,priority,inf):
     pst = []
     for el in inf:
+        if el == ' ':
+            continue
         # print("checking: ",el)
         # opening parenthesis
         if el == '(':

@@ -1,0 +1,9 @@
+Script started on Sat Jul 20 16:07:50 2019
+[?1034hbash-3.2$ p[Kpython3 infix_to_postfix_prefix.py 
+Enter the infix expression:(A - B/C) * (A/K-L)
+Postfix(1) or Prefix(2) or both(3)? (1,2 or 3) 2
+Prefix expression:  ['*', '-', 'A', ' ', '/', ' ', 'B', 'C', ' ', ' ', '-', '/', 'A', 'K', 'L']
+bash-3.2$ exit
+exit
+
+Script done on Sat Jul 20 16:08:38 2019

@@ -100,10 +100,20 @@ if __name__=="__main__":
     inf = input("Enter the infix expression:")
     #print("input: a+b*(c^d-e)^(f+g*h)-i")
     #inf = "a+b*(c^d-e)^(f+g*h)-i"
-
-    print("Postfix expression: ",infix_to_postfix(st,priority,inf))
-    print("Prefix expression: ",infix_to_prefix(st,priority,inf))
-
+    op = int(input("Postfix(1) or Prefix(2) or both(3)? (1,2 or 3) "))
+    while True:
+        if op == 1:
+            print("Postfix expression: ",infix_to_postfix(st,priority,inf))
+            break
+        elif op == 2:
+            print("Prefix expression: ",infix_to_prefix(st,priority,inf))
+            break
+        elif op == 3:
+            print("Postfix expression: ",infix_to_postfix(st,priority,inf))
+            print("Prefix expression: ",infix_to_prefix(st,priority,inf))
+            break
+        else:
+            op = int(input("Postfix(1) or Prefix(2) or both(3)? (enter 1,2 or 3): "))
 
 
 

@@ -17,19 +17,9 @@ class Stacks:
     def printStack(self):
         return self.items
 
-if __name__=="__main__":
-    priority = {}
-    priority['+'] = 1
-    priority['-'] = 1
-    priority['*'] = 2
-    priority['/'] = 2
-    priority['^'] = 3
+# converts infix expression to postfix expression
+def infix_to_postfix(st,priority,inf):
     pst = []
-    st = Stacks()
-    inf = input("Enter the infix expression:")
-    #print("input: a+b*(c^d-e)^(f+g*h)-i")
-    #inf = "a+b*(c^d-e)^(f+g*h)-i"
-
     for el in inf:
         # print("checking: ",el)
         # opening parenthesis
@@ -73,10 +63,46 @@ if __name__=="__main__":
                     break
             st.push(el)
         # print("stack: ",st.printStack())
+        # print("postfix:",pst)
     while not st.is_empty():
         pst.append(st.pop())
+    return pst
 
-    print("Final postfix expression: ",pst)
+def reverse(exp):
+    rev_exp = []
+    for i in range(len(exp)-1,-1,-1):
+        if exp[i] == '(':
+            e = ')'
+        elif exp[i] == ')':
+            e = '('
+        else:
+            e = exp[i]
+        rev_exp.append(e)
+    return rev_exp
+
+def infix_to_prefix(st,priority,inf):
+    rev_exp = reverse(inf)
+    pst = infix_to_postfix(st,priority,rev_exp)
+    return reverse(pst)
+
+
+
+
+if __name__=="__main__":
+    priority = {}
+    priority['+'] = 1
+    priority['-'] = 1
+    priority['*'] = 2
+    priority['/'] = 2
+    priority['^'] = 3
+    
+    st = Stacks()
+    inf = input("Enter the infix expression:")
+    #print("input: a+b*(c^d-e)^(f+g*h)-i")
+    #inf = "a+b*(c^d-e)^(f+g*h)-i"
+
+    print("Postfix expression: ",infix_to_postfix(st,priority,inf))
+    print("Prefix expression: ",infix_to_prefix(st,priority,inf))
 
 
 

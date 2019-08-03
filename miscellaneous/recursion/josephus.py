@@ -2,7 +2,7 @@
 # Find the survivor. (Josephus Problem)
 
 def josephus(n,k,start,i,killed=[]):
-
+    
     if n == len(killed) + 1:
         return set([x for x in range(1,n+1)]) - set(killed)
     if (start+1)%n == 0:

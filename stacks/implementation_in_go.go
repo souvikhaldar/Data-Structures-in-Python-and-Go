@@ -1,12 +1,11 @@
 package main
 import "fmt"
-type stackFunctionalities interface{
+type Stack interface{
 	push(item int)
 	pop()int 
 	peek()
 	isEmpty()bool
 } 
-
 
 func (s *stack)isEmpty()bool{
 	if s.head == nil{
@@ -68,7 +67,7 @@ func printStack(s *stack){
 	}
 }
 
-func new()*stack{
+func new()Stack{
 	return &stack{
 		head: nil,
 	}
